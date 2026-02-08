@@ -15,7 +15,9 @@
 - **Framework**: Next.js 14 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
-- **AI**: Claude 3.5 Sonnet (Anthropic API)
+- **AI**: Claude Haiku 4.5 (Anthropic API)
+- **Charts**: Recharts
+- **Deployment**: Vercel
 - **Storage**: localStorage (프로토타입)
 
 ## 시작하기
@@ -46,12 +48,47 @@ npm run dev
 
 브라우저에서 [http://localhost:3000](http://localhost:3000)으로 접속하세요.
 
-### 3. 프로덕션 빌드
+### 4. 프로덕션 빌드
 
 ```bash
 npm run build
 npm start
 ```
+
+## 🚀 Vercel 배포
+
+이 프로젝트는 Vercel에 배포할 수 있도록 설정되어 있습니다.
+
+### 빠른 배포
+
+```bash
+# Vercel CLI 설치
+npm install -g vercel
+
+# 로그인
+vercel login
+
+# 환경 변수 설정 (최초 1회)
+vercel env add ANTHROPIC_API_KEY production
+vercel env add ANTHROPIC_API_KEY preview
+vercel env add ANTHROPIC_API_KEY development
+
+# 배포
+vercel --prod
+```
+
+**중요**: 배포 전에 `ANTHROPIC_API_KEY` 환경 변수를 설정해야 합니다.
+
+### 상세 배포 가이드
+
+자세한 배포 방법은 [DEPLOYMENT.md](./DEPLOYMENT.md)를 참고하세요.
+
+배포 가이드에는 다음 내용이 포함되어 있습니다:
+- Vercel 웹 대시보드로 배포하기
+- Vercel CLI로 배포하기
+- 환경 변수 설정 방법
+- 커스텀 도메인 연결
+- 문제 해결 가이드
 
 ## 프로젝트 구조
 
@@ -125,9 +162,38 @@ AI 상담 페이지에서:
 - 태블릿: 768px+
 - 데스크톱: 1024px+
 
+## 📝 API 엔드포인트
+
+### POST `/api/chat`
+
+AI 상담사와 채팅합니다.
+
+**요청**:
+```json
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": "어머니가 밤마다 깨서 나가려고 해요."
+    }
+  ]
+}
+```
+
+**응답**:
+```json
+{
+  "message": "AI 상담사의 답변...",
+  "usage": {
+    "input_tokens": 150,
+    "output_tokens": 200
+  }
+}
+```
+
 ## 향후 개선 사항
 
-- [ ] 실제 AI API 연동 (Claude API, OpenAI 등)
+- [x] 실제 AI API 연동 (Claude Haiku 4.5)
 - [ ] 백엔드 서버 및 데이터베이스 연동
 - [ ] 사용자 인증 시스템
 - [ ] 더 풍부한 감정 분석 및 인사이트
