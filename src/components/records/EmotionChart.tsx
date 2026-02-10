@@ -14,15 +14,6 @@ export default function EmotionChart({ records }: EmotionChartProps) {
     return date;
   });
 
-  const emotionColors: Record<EmotionType, string> = {
-    happy: '#ffd93d',
-    okay: '#a0d8ef',
-    tired: '#c9b8e6',
-    anxious: '#ffb3ba',
-    sad: '#bae1ff',
-    angry: '#ffaaa5',
-  };
-
   const getEmotionForDay = (date: Date): EmotionRecord | undefined => {
     return records.find(record => {
       const recordDate = new Date(record.date);
@@ -31,8 +22,8 @@ export default function EmotionChart({ records }: EmotionChartProps) {
   };
 
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-sm">
-      <h3 className="text-lg font-bold text-gray-800 mb-4">이번 주 감정 변화</h3>
+    <div className="bg-[#FFF0EA] rounded-2xl p-6">
+      <h3 className="text-lg font-bold text-[#4A3832] mb-4">이번 주 감정 변화</h3>
 
       <div className="flex items-end justify-between gap-2 h-48">
         {last7Days.map((date, index) => {
@@ -44,19 +35,19 @@ export default function EmotionChart({ records }: EmotionChartProps) {
               <div className="flex-1 flex items-end w-full">
                 {hasEmotion && record ? (
                   <div
-                    className="w-full rounded-t-lg transition-all hover:opacity-80 cursor-pointer flex items-center justify-center"
+                    className="w-full rounded-t-lg transition-all hover:opacity-90 cursor-pointer flex items-center justify-center"
                     style={{
-                      backgroundColor: emotionColors[record.emotion],
+                      background: 'linear-gradient(180deg, #F28B74, #FBCFC3)',
                       height: '100%',
                     }}
                   >
                     <span className="text-2xl">{EMOTION_EMOJIS[record.emotion]}</span>
                   </div>
                 ) : (
-                  <div className="w-full h-8 bg-gray-100 rounded-t-lg"></div>
+                  <div className="w-full h-8 bg-[#F0F0F0] rounded-t-lg"></div>
                 )}
               </div>
-              <div className="text-xs text-gray-500 mt-2 text-center">
+              <div className="text-xs text-[#A0887C] mt-2 text-center">
                 {date.getMonth() + 1}/{date.getDate()}
               </div>
             </div>
@@ -65,7 +56,7 @@ export default function EmotionChart({ records }: EmotionChartProps) {
       </div>
 
       {records.length === 0 && (
-        <div className="text-center py-8 text-gray-500">
+        <div className="text-center py-8 text-[#A0887C]">
           <p>아직 기록된 감정이 없습니다.</p>
           <p className="text-sm mt-1">홈에서 감정을 기록해보세요!</p>
         </div>

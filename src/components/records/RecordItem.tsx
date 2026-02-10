@@ -20,19 +20,19 @@ export default function RecordItem({ record }: RecordItemProps) {
   });
 
   return (
-    <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+    <div className="bg-[#FFF0EA] rounded-2xl p-4">
       <div className="flex items-start gap-3">
         <div className="text-4xl">{EMOTION_EMOJIS[record.emotion]}</div>
         <div className="flex-1">
           <div className="flex items-center justify-between mb-1">
-            <span className="font-medium text-gray-800">
+            <span className="font-semibold text-[#4A3832]">
               {EMOTION_LABELS[record.emotion]}
             </span>
-            <span className="text-xs text-gray-400">{formattedTime}</span>
+            <span className="text-xs text-[#A0887C] opacity-50">{formattedTime}</span>
           </div>
-          <div className="text-sm text-gray-500 mb-2">{formattedDate}</div>
+          <div className="text-sm text-[#A0887C] opacity-50 mb-2">{formattedDate}</div>
           {record.memo && (
-            <p className="text-sm text-gray-700 leading-relaxed bg-gray-50 rounded-lg p-3 mt-2">
+            <p className="text-sm text-[#4A3832] leading-relaxed bg-white bg-opacity-60 rounded-xl p-3 mt-2">
               {record.memo}
             </p>
           )}

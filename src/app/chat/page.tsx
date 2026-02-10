@@ -117,8 +117,8 @@ export default function ChatPage() {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-gradient-to-b from-primary-50 to-white">
-      <Header title="AI 상담" />
+    <div className="flex flex-col h-screen bg-[#FFFBF8]">
+      <Header title="💬 AI 상담" />
 
       {/* Messages */}
       <div className="flex-1 overflow-y-auto px-4 py-6 pb-40 max-w-lg mx-auto w-full">
@@ -129,13 +129,13 @@ export default function ChatPage() {
         {/* Typing indicator */}
         {isTyping && (
           <div className="flex justify-start mb-4">
-            <div className="bg-white border border-gray-200 rounded-2xl px-4 py-3">
+            <div className="bg-[#FFF0EA] rounded-2xl px-4 py-3">
               <div className="flex items-center gap-2">
-                <span className="text-xl">🤖</span>
+                <span className="text-xl">🧡</span>
                 <div className="flex gap-1">
-                  <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></span>
-                  <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></span>
-                  <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></span>
+                  <span className="w-2 h-2 bg-[#F28B74] rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></span>
+                  <span className="w-2 h-2 bg-[#F28B74] rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></span>
+                  <span className="w-2 h-2 bg-[#F28B74] rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></span>
                 </div>
               </div>
             </div>

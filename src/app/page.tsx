@@ -78,14 +78,14 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-primary-50 to-white pb-20">
+    <div className="min-h-screen bg-[#FFFBF8] pb-20">
       <div className="max-w-lg mx-auto px-6 pt-12">
         {/* Greeting */}
         <div className="mb-12">
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">
-            {getGreeting()}, {nickname}님!
+          <h1 className="text-3xl font-outfit font-extrabold text-[#4A3832] mb-2">
+            {getGreeting()}, {nickname}님 🧡
           </h1>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-[#A0887C]">
             오늘 기분은 어떠신가요?
           </p>
         </div>
@@ -97,9 +97,9 @@ export default function HomePage() {
             selectedEmotion={selectedEmotion}
           />
         ) : (
-          <div className="bg-primary-100 border-2 border-primary-500 rounded-2xl p-8 text-center animate-fade-in">
+          <div className="bg-[#FFF0EA] border-2 border-[#F28B74] rounded-2xl p-8 text-center animate-fade-in">
             <div className="text-6xl mb-4">✅</div>
-            <p className="text-xl font-bold text-primary-600">
+            <p className="text-xl font-bold text-[#E06B50]">
               오늘의 감정이 기록되었어요!
             </p>
           </div>
@@ -109,14 +109,15 @@ export default function HomePage() {
         <div className="mt-12 space-y-4">
           <button
             onClick={() => router.push('/chat')}
-            className="w-full bg-white border-2 border-primary-500 text-primary-600 py-4 rounded-xl font-medium text-lg hover:bg-primary-50 transition-colors flex items-center justify-center gap-2"
+            className="w-full bg-gradient-to-r from-[#F28B74] to-[#E87A62] text-white py-4 rounded-2xl font-bold text-lg transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+            style={{ boxShadow: '0 4px 16px rgba(242,139,116,0.35)' }}
           >
             <span>💬</span>
-            <span>AI와 상담하기</span>
+            <span>케루와 상담하기</span>
           </button>
           <button
             onClick={() => router.push('/records')}
-            className="w-full bg-white border-2 border-gray-300 text-gray-700 py-4 rounded-xl font-medium text-lg hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
+            className="w-full bg-[#FFF0EA] border-[1.5px] border-[#FBCFC3] text-[#F28B74] py-4 rounded-2xl font-bold text-lg hover:bg-[#FFE8DE] transition-colors flex items-center justify-center gap-2"
           >
             <span>📊</span>
             <span>내 기록 보기</span>

@@ -11,36 +11,36 @@ export default function EmotionSelector({ onSelect, selectedEmotion }: EmotionSe
   const emotions: EmotionType[] = ['happy', 'okay', 'tired', 'anxious', 'sad', 'angry'];
 
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-3 gap-3">
       {emotions.map((emotion) => (
         <button
           key={emotion}
           onClick={() => onSelect(emotion)}
-          className={`flex flex-col items-center justify-center p-6 rounded-2xl transition-all ${
+          className={`flex flex-col items-center justify-center p-3 rounded-2xl transition-all ${
             selectedEmotion === emotion
-              ? 'bg-primary-100 border-2 border-primary-500 scale-105'
-              : 'bg-white border-2 border-gray-200 hover:border-primary-300 hover:scale-102'
+              ? 'scale-105 shadow-md'
+              : 'hover:scale-102'
           }`}
           style={{
-            backgroundColor: selectedEmotion === emotion ? undefined : `${getEmotionColor(emotion)}20`,
+            background: getEmotionGradient(emotion),
           }}
         >
-          <span className="text-5xl mb-2">{EMOTION_EMOJIS[emotion]}</span>
-          <span className="text-sm font-medium text-gray-700">{EMOTION_LABELS[emotion]}</span>
+          <span className="text-4xl mb-1">{EMOTION_EMOJIS[emotion]}</span>
+          <span className="text-[11px] font-semibold text-[#4A3832]">{EMOTION_LABELS[emotion]}</span>
         </button>
       ))}
     </div>
   );
 }
 
-function getEmotionColor(emotion: EmotionType): string {
-  const colors: Record<EmotionType, string> = {
-    happy: '#ffd93d',
-    okay: '#a0d8ef',
-    tired: '#c9b8e6',
-    anxious: '#ffb3ba',
-    sad: '#bae1ff',
-    angry: '#ffaaa5',
+function getEmotionGradient(emotion: EmotionType): string {
+  const gradients: Record<EmotionType, string> = {
+    happy: 'linear-gradient(135deg, #FFF0EA, #FFE8DE)',
+    okay: 'linear-gradient(135deg, #FFF5EE, #FFF0EA)',
+    tired: 'linear-gradient(135deg, #E8E0F8, #DED6F0)',
+    anxious: 'linear-gradient(135deg, #E8F5EF, #DCF0E6)',
+    sad: 'linear-gradient(135deg, #EEF0FF, #E4E8FF)',
+    angry: 'linear-gradient(135deg, #FFEDE8, #FFE0D8)',
   };
-  return colors[emotion];
+  return gradients[emotion];
 }

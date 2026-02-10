@@ -19,7 +19,7 @@ export default function ChatInput({ onSend, disabled }: ChatInputProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="border-t border-gray-200 bg-white p-4">
+    <form onSubmit={handleSubmit} className="border-t border-[#F5EBE6] bg-[#FFFBF8] p-4">
       <div className="flex gap-2 max-w-lg mx-auto">
         <input
           type="text"
@@ -27,14 +27,17 @@ export default function ChatInput({ onSend, disabled }: ChatInputProps) {
           onChange={(e) => setMessage(e.target.value)}
           placeholder="메시지를 입력하세요..."
           disabled={disabled}
-          className="flex-1 px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none disabled:bg-gray-100"
+          className="flex-1 px-4 py-3 border-[1.5px] border-[#F5EBE6] rounded-full focus:ring-2 focus:ring-[#FBCFC3] focus:border-[#F28B74] outline-none disabled:bg-gray-100"
         />
         <button
           type="submit"
           disabled={!message.trim() || disabled}
-          className="px-6 py-3 bg-primary-500 text-white rounded-xl font-medium hover:bg-primary-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-12 h-12 bg-[#F28B74] text-white rounded-full font-medium hover:bg-[#E06B50] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
         >
-          전송
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
         </button>
       </div>
     </form>

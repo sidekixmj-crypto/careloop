@@ -24,12 +24,12 @@ export default function OnboardingForm({ onSubmit }: OnboardingFormProps) {
 
   return (
     <div className="h-full flex flex-col justify-center px-8 py-12">
-      <h2 className="text-2xl font-bold text-gray-800 mb-2">반가워요!</h2>
-      <p className="text-gray-600 mb-8">몇 가지 정보를 알려주세요</p>
+      <h2 className="text-2xl font-outfit font-extrabold text-[#4A3832] mb-2">반가워요!</h2>
+      <p className="text-[#A0887C] mb-8">몇 가지 정보를 알려주세요</p>
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-[#4A3832] mb-2">
             닉네임
           </label>
           <input
@@ -37,19 +37,19 @@ export default function OnboardingForm({ onSubmit }: OnboardingFormProps) {
             value={profile.nickname}
             onChange={(e) => setProfile({ ...profile, nickname: e.target.value })}
             placeholder="어떻게 불러드릴까요?"
-            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
+            className="w-full px-4 py-3 border-[1.5px] border-[#F5EBE6] rounded-xl focus:ring-2 focus:ring-[#FBCFC3] focus:border-[#F28B74] outline-none"
             required
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-[#4A3832] mb-2">
             환자와의 관계
           </label>
           <select
             value={profile.relationship}
             onChange={(e) => setProfile({ ...profile, relationship: e.target.value })}
-            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
+            className="w-full px-4 py-3 border-[1.5px] border-[#F5EBE6] rounded-xl focus:ring-2 focus:ring-[#FBCFC3] focus:border-[#F28B74] outline-none"
             required
           >
             <option value="">선택해주세요</option>
@@ -62,13 +62,13 @@ export default function OnboardingForm({ onSubmit }: OnboardingFormProps) {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-[#4A3832] mb-2">
             돌봄 기간
           </label>
           <select
             value={profile.careDuration}
             onChange={(e) => setProfile({ ...profile, careDuration: e.target.value })}
-            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none"
+            className="w-full px-4 py-3 border-[1.5px] border-[#F5EBE6] rounded-xl focus:ring-2 focus:ring-[#FBCFC3] focus:border-[#F28B74] outline-none"
             required
           >
             <option value="">선택해주세요</option>
@@ -86,9 +86,9 @@ export default function OnboardingForm({ onSubmit }: OnboardingFormProps) {
               type="checkbox"
               checked={profile.livingTogether}
               onChange={(e) => setProfile({ ...profile, livingTogether: e.target.checked })}
-              className="w-5 h-5 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
+              className="w-5 h-5 text-[#F28B74] border-[#F5EBE6] rounded focus:ring-[#FBCFC3]"
             />
-            <span className="text-sm font-medium text-gray-700">
+            <span className="text-sm font-medium text-[#4A3832]">
               환자와 함께 거주하고 있습니다
             </span>
           </label>
@@ -96,7 +96,8 @@ export default function OnboardingForm({ onSubmit }: OnboardingFormProps) {
 
         <button
           type="submit"
-          className="w-full bg-primary-500 text-white py-4 rounded-xl font-medium text-lg hover:bg-primary-600 transition-colors mt-8"
+          className="w-full bg-gradient-to-r from-[#F28B74] to-[#E87A62] text-white py-4 rounded-2xl font-bold text-lg transition-all shadow-lg hover:shadow-xl mt-8"
+          style={{ boxShadow: '0 4px 16px rgba(242,139,116,0.35)' }}
         >
           시작하기
         </button>

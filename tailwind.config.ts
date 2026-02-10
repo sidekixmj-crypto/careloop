@@ -10,24 +10,23 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          50: '#f0f9f4',
-          100: '#dcf2e4',
-          500: '#6dbc8d',
-          600: '#5aa876',
+          DEFAULT: '#F28B74',
+          dark: '#E06B50',
+          light: '#FBCFC3',
         },
-        secondary: {
-          50: '#faf8f5',
-          100: '#f5f1eb',
-          200: '#ebe4d9',
+        secondary: '#B8DDD1',
+        background: '#FFFBF8',
+        surface: '#FFF0EA',
+        text: {
+          primary: '#4A3832',
+          secondary: '#A0887C',
         },
-        emotion: {
-          happy: '#ffd93d',
-          okay: '#a0d8ef',
-          tired: '#c9b8e6',
-          anxious: '#ffb3ba',
-          sad: '#bae1ff',
-          angry: '#ffaaa5',
-        },
+        border: '#F5EBE6',
+        success: '#5BAA94',
+      },
+      fontFamily: {
+        outfit: ['Outfit', 'sans-serif'],
+        sans: ['Noto Sans KR', 'sans-serif'],
       },
       fontSize: {
         xl: '1.25rem',

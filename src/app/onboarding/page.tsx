@@ -54,7 +54,7 @@ export default function OnboardingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-primary-50 to-white">
+    <div className="min-h-screen bg-[#FFFBF8]">
       <div className="max-w-lg mx-auto h-screen flex flex-col">
         {/* Progress Indicator */}
         <div className="flex justify-center items-center pt-8 pb-4">
@@ -63,8 +63,8 @@ export default function OnboardingPage() {
               key={index}
               className={`h-2 rounded-full mx-1 transition-all ${
                 index === currentStep
-                  ? 'w-8 bg-primary-500'
-                  : 'w-2 bg-gray-300'
+                  ? 'w-8 bg-[#F28B74]'
+                  : 'w-2 bg-[#FBCFC3]'
               }`}
             />
           ))}
@@ -84,14 +84,15 @@ export default function OnboardingPage() {
           <div className="p-8 space-y-3">
             <button
               onClick={handleNext}
-              className="w-full bg-primary-500 text-white py-4 rounded-xl font-medium text-lg hover:bg-primary-600 transition-colors"
+              className="w-full bg-gradient-to-r from-[#F28B74] to-[#E87A62] text-white py-4 rounded-2xl font-bold text-lg transition-all shadow-lg hover:shadow-xl"
+              style={{ boxShadow: '0 4px 16px rgba(242,139,116,0.35)' }}
             >
               다음
             </button>
             {currentStep > 0 && (
               <button
                 onClick={handlePrev}
-                className="w-full text-gray-600 py-3 rounded-xl font-medium hover:bg-gray-100 transition-colors"
+                className="w-full text-[#A0887C] py-3 rounded-xl font-medium hover:bg-[#FFF0EA] transition-colors"
               >
                 이전
               </button>
